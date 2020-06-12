@@ -191,7 +191,7 @@ module ECpayPayment
           end
 
         else
-          raise "Unexpected type (#{p_type}) for parameter #{p_name}. "
+          raise "Unexpected type (#{p_type}) for parameter #{p_name}. " unless p_name == "BindingCard"
 
         end
       end
