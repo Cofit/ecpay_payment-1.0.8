@@ -149,7 +149,7 @@ class APIHelper
           # res = Net::HTTP.post_form(target_url, payload)
           uri = URI.parse(url)
           http = Net::HTTP.new(uri.host, uri.port)
-          http.read_timeout = 150
+          http.read_timeout = 300
           req = Net::HTTP::Post.new(uri.path)
           req.body = params
           http.request(req)
