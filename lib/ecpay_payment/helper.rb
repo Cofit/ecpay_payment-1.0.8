@@ -146,7 +146,13 @@ class APIHelper
           target_url.query = URI.encode_www_form(payload)
           res = Net::HTTP.get_response(target_url)
         when 'POST'
-          res = Net::HTTP.post_form(target_url, payload)
+          # res = Net::HTTP.post_form(target_url, payload)
+          uri = URI.parse(url)
+          http = Net::HTTP.new(uri.host, uri.port)
+          http.read_timeout = 150
+          req = Net::HTTP::Post.new(uri.path)
+          req.body = params
+          http.request(req)
         else
           raise ArgumentError, "Only GET & POST method are avaliable."
         end
