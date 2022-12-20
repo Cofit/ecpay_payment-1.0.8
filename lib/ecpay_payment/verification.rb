@@ -191,10 +191,14 @@ module ECpayPayment
           end
 
         else
-          raise "Unexpected type (#{p_type}) for parameter #{p_name}. " unless ["BindingCard", "CharSet"].include?(p_name)
+          raise "Unexpected type (#{p_type}) for parameter #{p_name}. " unless bypass_parameters.include?(p_name)
 
         end
       end
+    end
+
+    def bypass_parameters
+      ["BindingCard", "CharSet"]
     end
   end
 
