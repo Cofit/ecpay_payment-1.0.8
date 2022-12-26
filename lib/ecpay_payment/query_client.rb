@@ -130,11 +130,13 @@ module ECpayPayment
         resp = @helper.http_request(method: 'POST', url: api_url, payload: params)
 
         # return  post response
-        if big5_trans
-          return resp.encode('utf-8', 'big5')
-        else
-          return resp
-        end
+        # if big5_trans
+        #   return resp.encode('utf-8', 'big5')
+        # else
+        #   return resp
+        # end
+
+        return resp
       end
     ### Private method definition end ###
 
