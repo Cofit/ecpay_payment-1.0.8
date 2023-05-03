@@ -172,14 +172,14 @@ module ECpayPayment
             params['MerchantID'] = @helper.get_mercid
           end
           # InvoiceMark based on keyword argument: invoice
-          if invoice == {}
-            params['InvoiceMark'] = 'N'
-          else
-            params['InvoiceMark'] = 'Y'
-            @verify_aiochkout.verify_aio_inv_param(invoice)
-            #merge param & inv param
-            params.merge!(invoice)
-          end
+          # if invoice == {}
+          #   params['InvoiceMark'] = 'N'
+          # else
+          #   params['InvoiceMark'] = 'Y'
+          #   @verify_aiochkout.verify_aio_inv_param(invoice)
+          #   #merge param & inv param
+          #   params.merge!(invoice)
+          # end
         else
           raise ECpayInvalidParam, "Recieved parameter object must be a Hash"
         end

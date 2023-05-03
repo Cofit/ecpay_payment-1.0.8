@@ -277,8 +277,8 @@
             	<pattern>.{0,16}</pattern>
             </param>
             <param type="Opt"  require="1" name="Donation">
+                <option>0</option>
                 <option>1</option>
-                <option>2</option>
             </param>
             <param type="String"  require="1" name="LoveCode">
                 <pattern>^([Xx]\d{2,6}|\d{3,7}|)$</pattern>
