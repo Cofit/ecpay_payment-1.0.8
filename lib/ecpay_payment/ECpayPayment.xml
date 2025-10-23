@@ -171,6 +171,7 @@
                 <pattern>^.{0,200}$</pattern>
             </param>
         </condparam>
+        <option>BNPL</option>
       </param>
       <param  type="String"  require="0" name="ClientBackURL">
         <pattern>^.{0,200}$</pattern>

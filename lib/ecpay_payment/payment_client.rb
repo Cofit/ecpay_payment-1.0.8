@@ -35,6 +35,15 @@ module ECpayPayment
 
     end
     
+    def aio_check_out_bnpl(params:, invoice:{})
+      unsupport = []
+      aiochkout_base_proc!(params: params, invoice: invoice, unsupport_param: unsupport, pay_method: 'BNPL')
+      # handle Ignore Payment
+      params['IgnorePayment'] = @helper.get_ignore_pay.join('#')
+      html = aiochkout_pos_proc!(params: params)
+      return html
+    end
+    
     def aio_check_out_apple_pay(params:, invoice:{})
       unsupport = []
       aiochkout_base_proc!(params: params, invoice: invoice, unsupport_param: unsupport, pay_method: 'ApplePay')
