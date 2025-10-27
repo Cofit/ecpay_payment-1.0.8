@@ -35,7 +35,7 @@ module ECpayPayment
 
     end
     
-    def aio_check_out_bnpl(params:, invoice:{})
+    def aio_check_out_no_card_installment(params:, invoice:{})
       unsupport = []
       aiochkout_base_proc!(params: params, invoice: invoice, unsupport_param: unsupport, pay_method: 'BNPL')
       # handle Ignore Payment
